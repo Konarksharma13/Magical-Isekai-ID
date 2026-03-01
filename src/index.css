@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Yomogi&family=Silkscreen:wght@400;700&family=Orbitron:wght@400..900&family=Itim&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-fantasy-gold: #ffcc33;
+  --color-fantasy-gold-light: #fff0b3;
+  --color-fantasy-dark: #2d1b4e;
+  --color-fantasy-void: #1a0b2e;
+  --color-magical-pink: #ff66cc;
+  --color-magical-yellow: #fff176;
+  --color-magical-blue: #64b5f6;
+  --color-magical-green: #81c784;
+  --color-magical-purple: #9933ff;
+  --color-magical-cyan: #33ffff;
+  
+  --font-serif: "Playfair Display", serif;
+  --font-blanka: "Orbitron", sans-serif;
+  --font-yomogi: "Yomogi", cursive;
+  --font-silkscreen: "Silkscreen", cursive;
+  --font-tech: "Rajdhani", sans-serif;
+  --font-whimsical: "Itim", cursive;
+}
+
+@layer base {
+  body {
+    @apply bg-fantasy-void text-slate-100 min-h-screen overflow-x-hidden;
+    background: linear-gradient(135deg, #1a0b2e 0%, #2d1b4e 50%, #1a0b2e 100%);
+    position: relative;
+  }
+
+  h1, h2, h3 {
+    @apply font-whimsical tracking-wide;
+  }
+}
+
+/* Sparkle Animation */
+@keyframes sparkle {
+  0%, 100% { opacity: 0; transform: scale(0); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+.sparkle {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: sparkle 2s infinite;
+  box-shadow: 0 0 10px white, 0 0 20px var(--color-magical-cyan);
+}
+
+/* Glowing Borders - Enhanced for Anime Feel */
+.glow-border-pink {
+  border: 3px solid var(--color-magical-pink);
+  box-shadow: 0 0 25px var(--color-magical-pink), 0 0 50px rgba(255, 102, 204, 0.4);
+}
+
+.glow-border-purple {
+  border: 3px solid var(--color-magical-purple);
+  box-shadow: 0 0 25px var(--color-magical-purple), 0 0 50px rgba(153, 51, 255, 0.4);
+}
+
+.glow-border-cyan {
+  border: 3px solid var(--color-magical-cyan);
+  box-shadow: 0 0 25px var(--color-magical-cyan), 0 0 50px rgba(51, 255, 255, 0.4);
+}
+
+.glow-border-legendary {
+  border: 4px solid var(--color-fantasy-gold);
+  box-shadow: 0 0 30px var(--color-fantasy-gold), 0 0 60px rgba(255, 204, 51, 0.5);
+}
+
+.glass-panel {
+  @apply bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl shadow-2xl;
+}
+
+/* Magical Inputs */
+.magical-input {
+  @apply w-full bg-white/10 border border-white/20 rounded-xl py-3 text-white outline-none transition-all duration-500 font-whimsical;
+}
+
+.magical-input:focus {
+  @apply border-magical-cyan/70 bg-white/20;
+  box-shadow: 0 0 20px rgba(51, 255, 255, 0.3);
+}
+
+.magical-label {
+  @apply block text-magical-yellow text-sm font-whimsical tracking-wider mb-2 font-bold;
+}
+
+/* Custom Radio Cards */
+.radio-card {
+  @apply relative cursor-pointer border border-white/10 bg-white/5 p-4 rounded-xl transition-all duration-500 hover:bg-white/15 hover:scale-105;
+}
+
+.radio-card.selected {
+  @apply border-magical-cyan bg-magical-cyan/10;
+  box-shadow: 0 0 20px rgba(51, 255, 255, 0.4);
+}
+
+/* Star Slider */
+input[type="range"].star-slider {
+  @apply w-full h-3 bg-white/20 rounded-full appearance-none cursor-pointer accent-magical-pink;
+}
+
+/* Generate Button */
+.btn-generate {
+  @apply w-full py-4 rounded-xl bg-gradient-to-r from-magical-pink to-magical-purple text-white font-whimsical text-xl tracking-widest transition-all duration-500 hover:scale-105 active:scale-95 shadow-lg;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.btn-generate:hover {
+  box-shadow: 0 0 30px rgba(255, 102, 204, 0.6);
+}

@@ -266,14 +266,14 @@ export default function App() {
                 <div className="flex justify-between items-center mb-2">
                   <label className="magical-label mb-0">Current Quest</label>
                   <span className={`text-[10px] font-whimsical ${quest.length >= 25 ? 'text-magical-pink' : 'text-slate-500'}`}>
-                    {quest.length}/25
+                    {quest.length}/40
                   </span>
                 </div>
                 <textarea 
                   placeholder="What are you doing here?" 
                   className="magical-input h-20 resize-none pr-4 pl-2" 
                   value={quest}
-                  maxLength={25}
+                  maxLength={40}
                   onChange={(e) => setQuest(e.target.value)}
                 />
               </div>
